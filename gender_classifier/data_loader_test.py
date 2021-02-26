@@ -9,8 +9,8 @@ X=list()
 Y=list()
 categories = os.listdir(folder_dir)
 num_class = len(categories)
-image_w = 64
-image_h = 64
+image_w = 255
+image_h = 255
 pixels =image_h*image_w*3
 
 for idx,cat in enumerate(categories):
