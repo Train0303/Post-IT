@@ -1,0 +1,10 @@
+해야할 것
+1. docker(조교님 컴퓨터 돌리기 위한)
+2. 일단 flask(조교님이 할줄안다닌까...)
+3. stargan v2(데이터 셋 모집)
+4. faceparser 사용해보기
+5. SEAN(image synthesis with semantic region-adaptive normalization) 을 통해 염색해보기
+
+
+구현 된 것
+1. 데이터셋 분류기
