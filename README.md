@@ -6,6 +6,10 @@ This is team Post-IT's graduation project
 StarGan v2
 =====================
 
+reference
+------------- 
+StarGan V2: [cloba AI](https://github.com/clovaai/stargan-v2, "google link")
+
 SEAN
 =============================
 You can download SEAN(Image Synthesis with Semantic Region-Adaptive Normalization)<br/>
@@ -17,3 +21,7 @@ SEAN: [SEAN](https://github.com/ZPdesu/SEAN, "google link")
 
 FaceParser
 =====================
+
+reference
+------------------
+FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch, "google link")
