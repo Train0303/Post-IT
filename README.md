@@ -3,7 +3,7 @@ graduate project
 ================
 This is team Post-IT's graduation project
 
-StarGan-V2
+StarGan-v2
 =====================
 
 
@@ -20,6 +20,6 @@ You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
 
 reference
 ====================
-StarGan-V2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
+StarGan-v2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
 SEAN: [SEAN](https://github.com/ZPdesu/SEAN)<br/>
 FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch)
