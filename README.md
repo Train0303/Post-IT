@@ -18,6 +18,6 @@ FaceParser
 
 reference
 ====================
-StarGan V2: [Clova AI](https://github.com/clovaai/stargan-v2, "google link")
-SEAN: [SEAN](https://github.com/ZPdesu/SEAN, "google link")
+StarGan V2: [Clova AI](https://github.com/clovaai/stargan-v2, "google link")<br/>
+SEAN: [SEAN](https://github.com/ZPdesu/SEAN, "google link")<br/>
 FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch, "google link")
