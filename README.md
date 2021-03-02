@@ -8,7 +8,7 @@ StarGan v2
 
 reference
 ------------- 
-StarGan V2: [cloba AI](https://github.com/clovaai/stargan-v2, "google link")
+StarGan V2: [Cloba AI](https://github.com/clovaai/stargan-v2, "google link")
 
 SEAN
 =============================
