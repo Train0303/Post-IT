@@ -10,7 +10,7 @@ StarGan v2
 SEAN
 =============================
 You can download SEAN(Image Synthesis with Semantic Region-Adaptive Normalization) pretrained model(CelebA-HQ_pretrained)<br/>
-here [Google Drive](https://drive.google.com/file/d/1UMgKGdVqlulfgOBV4Z0ajEwPdgt3_EDK/view?usp=sharing)
+[Google Drive](https://drive.google.com/file/d/1UMgKGdVqlulfgOBV4Z0ajEwPdgt3_EDK/view?usp=sharing)
 
 
 FaceParser
