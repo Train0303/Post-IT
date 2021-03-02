@@ -13,7 +13,7 @@ pretrained model(CelebA-HQ_pretrained) here [Google Drive](https://drive.google.
 
 reference
 ------------- 
-[SEAN](https://github.com/ZPdesu/SEAN,"google link")
+SEAN: [SEAN](https://github.com/ZPdesu/SEAN, "google link")
 
 FaceParser
 =====================
