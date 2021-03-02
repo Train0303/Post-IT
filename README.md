@@ -3,6 +3,11 @@ graduate project
 ================
 This is team Post-IT's graduation project
 
+StarGan v2
+=====================
+
+FaceParser
+=====================
 SEAN
 =============================
 you can download SEAN(Image Synthesis with Semantic Region-Adaptive Normalization)<br/>
