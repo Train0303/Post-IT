@@ -26,5 +26,5 @@ reference
 ====================
 StarGan-v2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
 SEAN: [SEAN](https://github.com/ZPdesu/SEAN)<br/>
-FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch)
+FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch)<br/>
 FaceMakeUp: [FaceMakeUp](https://github.com/zllrunning/face-makeup.PyTorch)
