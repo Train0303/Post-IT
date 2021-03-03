@@ -18,8 +18,13 @@ FaceParser
 You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
 [Google Drive](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)
 
+FaceMakeUp
+==================
+dyeing for no reference. only using RGB values
+
 reference
 ====================
 StarGan-v2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
 SEAN: [SEAN](https://github.com/ZPdesu/SEAN)<br/>
 FaceParser: [FaceParser](https://github.com/zllrunning/face-parsing.PyTorch)
+FaceMakeUp: [FaceMakeUp](https://github.com/zllrunning/face-makeup.PyTorch)
