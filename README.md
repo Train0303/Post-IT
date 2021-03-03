@@ -21,7 +21,9 @@ You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
 FaceMakeUp
 ==================
 dyeing for no reference. only using RGB values
+
 ![KakaoTalk_20210303_184744055](https://user-images.githubusercontent.com/39511892/109807585-70c06780-7c69-11eb-8f29-0a9aa8f236fb.png)<br/>
+
 reference
 ====================
 StarGan-v2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
