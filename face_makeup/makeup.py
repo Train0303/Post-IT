@@ -75,12 +75,12 @@ if __name__ == '__main__':
     parsing = evaluate(image_path, cp)
     parsing = cv2.resize(parsing, image.shape[0:2], interpolation=cv2.INTER_NEAREST)
 
-    color = [50, 30, 200]
+    color = [250, 30, 20]
 
     image = hair(image=image, parsing=parsing, color=color)
 
     cv2.imshow('image', cv2.resize(ori, (256, 256)))
     cv2.imshow('color', cv2.resize(image, (256, 256)))
-
+    cv2.imwrite('../result/NoReferenceDyeing.jpg', image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
