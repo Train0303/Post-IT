@@ -20,7 +20,7 @@ You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
 
 FaceMakeUp
 ==================
-dyeing for no reference. only using RGB values
+dyeing no reference. only using RGB values
 
 ![1](https://user-images.githubusercontent.com/39511892/109808245-36a39580-7c6a-11eb-9406-a6bf24e7f40d.png)
 <br/>
