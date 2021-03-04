@@ -1,5 +1,5 @@
 # Post-IT
-graduat project
+graduation project
 ================
 This is team Post-IT's graduation project
 
