@@ -1,0 +1,2 @@
+Face Makeup 과 Face Parser를 main.py에서 argparser를 이용하여 쉽게 실행이 가능하도록 만듦
+SEAN을 돌려보고 싶지만 gpu의 성능차이로 실행하지는 못했고 코드상으론 충분히 가능할 것이라 판단

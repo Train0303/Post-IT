@@ -2,15 +2,9 @@ import cv2
 import os
 import numpy as np
 from skimage.filters import gaussian
-from test import evaluate
+from face_makeup.test import evaluate
 import argparse
-
-
-def parse_args():
-    parse = argparse.ArgumentParser()
-    parse.add_argument('--img-path', default='imgs/116.jpg')
-    return parse.parse_args()
-
+import glob
 
 def sharpen(img):
     img = img * 1.0
@@ -54,33 +48,13 @@ def hair(image, parsing, part=17, color=[230, 50, 20]):
     changed[parsing != part] = image[parsing != part]
     return changed
 
-
-if __name__ == '__main__':
-    # 1  face
-    # 11 teeth
-    # 12 upper lip
-    # 13 lower lip
-    # 17 hair
-
-    args = parse_args()
-
-
-
-    image_path = args.img_path
-    cp = 'cp/79999_iter.pth'
-
-    image = cv2.imread(image_path)
-    image = cv2.resize(image,(256,256))
-    ori = image.copy()
-    parsing = evaluate(image_path, cp)
-    parsing = cv2.resize(parsing, image.shape[0:2], interpolation=cv2.INTER_NEAREST)
-
-    color = [250, 30, 20]
-
-    image = hair(image=image, parsing=parsing, color=color)
-
-    cv2.imshow('image', cv2.resize(ori, (256, 256)))
-    cv2.imshow('color', cv2.resize(image, (256, 256)))
-    cv2.imwrite('../result/NoReferenceDyeing.jpg', image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+def dyeing(respth,dspth,color=[50,200,40]):
+    cp = './face_makeup/cp/79999_iter.pth'
+    files = glob.glob(dspth+'/*.jpg')
+    for f in files:
+        image = cv2.imread(f)
+        image = cv2.resize(image,(512,512))
+        parsing = evaluate(f, cp)
+        parsing = cv2.resize(parsing, image.shape[0:2], interpolation=cv2.INTER_NEAREST)
+        image = hair(image, parsing, part=17, color=color)
+        cv2.imwrite(respth+'/NoReferenceDyeing.jpg',image)

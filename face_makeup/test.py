@@ -3,7 +3,7 @@
 
 import torch
 import os
-from model import BiSeNet
+from face_makeup.model import BiSeNet
 import os.path as osp
 import numpy as np
 from PIL import Image
@@ -65,7 +65,7 @@ def evaluate(image_path='./imgs/116.jpg', cp='cp/79999_iter.pth'):
 
     with torch.no_grad():
         img = Image.open(image_path)
-        image = img.resize((256, 256), Image.BILINEAR)
+        image = img.resize((512, 512), Image.BILINEAR)
         img = to_tensor(image)
         img = torch.unsqueeze(img, 0)
         img = img.cuda()
