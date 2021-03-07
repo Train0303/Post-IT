@@ -17,7 +17,7 @@ FaceParser
 =====================
 You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
 [Google Drive](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)<br/>
-![116](https://user-images.githubusercontent.com/39511892/110231787-4caca100-7f5d-11eb-9ad4-ef711edcefae.png)<br/>
+![123](https://user-images.githubusercontent.com/39511892/110231927-f2f8a680-7f5d-11eb-9569-63f10331f409.png)<br/>
 
 FaceMakeUp
 ==================
