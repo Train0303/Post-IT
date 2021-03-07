@@ -24,8 +24,7 @@ FaceMakeUp
 dyeing no reference. only using RGB values
 
 ![test](https://user-images.githubusercontent.com/39511892/110232065-db6ded80-7f5e-11eb-826b-52d316d33ccd.PNG)<br/>
-![NoReferenceDyeing](https://user-images.githubusercontent.com/39511892/110231944-03108600-7f5e-11eb-8b14-1009ad00fe95.jpg)
-<br/>
+
 ![2](https://user-images.githubusercontent.com/39511892/109808291-4327ee00-7c6a-11eb-8e01-b8eef53b27bc.png)
 
 reference
