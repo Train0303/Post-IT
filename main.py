@@ -1,40 +1,46 @@
   
 import torch
-
 import argparse
 
-from face_makeup.makeup import dyeing
+from face_makeup.makeup import hair_dyeing
 from face_parser.test import parsing
+from SEAN.test import reconstruct
+
 def main(args):
     print(args)
     torch.manual_seed(args.seed)
 
     if args.mode == 'dyeing':
         if(args.color == None):
-            dyeing(respth='./result/dyeing',dspth='./dataset/src')    
+            hair_dyeing(respth='./result/dyeing',dspth='./dataset/src')    
         else:
-            dyeing(respth='./result/dyeing',dspth='./dataset/src',color=args.color) #test
+            hair_dyeing(respth='./result/dyeing',dspth='./dataset/src',color=args.color) #test
 
     elif args.mode == 'refdyeing':
         # Parsing > SEAN
-        parsing(respth='./result/refdyeing' ,dspth='./dataset/src') # parsing src_image
-        parsing(respth='./result/refdyeing', dspth='./dataset/dyeing') # parsing ref_image
+        #face parsing
+        parsing(respth='./result/label/refdyeing/src' ,dspth='./dataset/src') # parsing src_image
+        parsing(respth='./result/label/refdyeing/ref', dspth='./dataset/ref') # parsing ref_image
+        #SEAN
         #reconstruct(args.mode)
-        
+
+    #------------------------------------stargan v2 여기부터--------------------------------------------------
     # elif args.mode == 'styling_ref':
     #     # StarGAN > Parsing > SEAN
+    #     args.result_dir = './result/styling_ref
     #     make_img(args) 
-    #     parsing(respth='./results/label/src', dspth='./data/src/src') # parsing src_image
-    #     parsing(respth='./results/label/others', dspth='./results/img') # parsing fake_image
+    #     parsing(respth='./result/label/styling_ref/src', dspth='./data/src/src') # parsing src_image
+    #     parsing(respth='./result/label/styling_ref/ref', dspth='./result/styling_ref') # parsing fake_image
     #     reconstruct(args.mode)
 
     # elif args.mode == 'styling_rand':
     #     # StarGAN > Parsing > SEAN
+    #     args.result_dir = './result/styling_rand
     #     make_img(args)
-    #     parsing(respth='./results/label/src', dspth='./data/src/src')
-    #     parsing(respth='./results/label/others', dspth='./results/img') # parsing fake_image
+    #     parsing(respth='./result/label/styling_rand/src' dspth='./data/src/src')
+    #     parsing(respth='./result/label/styling_rand/ref', dspth='./result/styling_rand') # parsing fake_image
     #     reconstruct(args.mode)
-    
+    #------------------------------------stargan v2 여기까지--------------------------------------------------
     else:
         raise NotImplementedError
 
@@ -63,11 +69,11 @@ if __name__ == '__main__':
     parser.add_argument('--checkpoint_dir', type=str, default='pretrained_network/StarGAN')
     parser.add_argument('--wing_path', type=str, default='pretrained_network/StarGAN/wing.ckpt')
 
-    parser.add_argument('--src_dir', type=str, default='./data/src')
-    parser.add_argument('--result_dir', type=str, default='./results/img')
+    parser.add_argument('--src_dir', type=str, default='./dataset/gan/src')
+    #parser.add_argument('--result_dir', type=str, default='./results/img')
     
     # for styling_ref
-    parser.add_argument('--ref_dir', type=str, default='./data/ref')
+    parser.add_argument('--ref_dir', type=str, default='./dataset/gan/ref')
 
     # for styling_rand
     parser.add_argument('--target_domain', type=int, default=0)

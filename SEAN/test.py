@@ -1,6 +1,6 @@
 import os
 from collections import OrderedDict
-from itertools import cycle
+
 
 from SEAN import data
 from SEAN.options.test_options import TestOptions
@@ -21,21 +21,39 @@ def reconstruct(mode):
     # make dataloader for source image
     src_dataloader = data.create_dataloader(opt)
 
-    # make dataloader for ref/generated image
-    if mode == 'dyeing':
-        opt.styling_mode = mode # dyeing
+    if mode == 'refdyeing':
+        opt.styling_mode = mode 
 
-        opt.image_dir = './data/dyeing'
-        opt.label_dir = './results/label/others'
+        opt.image_dir = './dataset/dyeing'  #이미지 있는곳
+        opt.label_dir = './result/label/refdyeing' #라벨 있는곳?
 
-    else: # styling_ref / styling_rand
+    elif mode == 'styling_ref': # styling_ref
         opt.styling_mode = 'styling'
 
-        opt.image_dir = './results/img'
-        opt.label_dir = './results/label/others'
+        opt.image_dir = './result/styling_ref'
+        opt.label_dir = './result/label/styling_ref'
+    
+    else:                       #styling_rand
+        opt.styling_mode = 'styling'
+
+        opt.image_dir = './result/styling_rand'
+        opt.label_dir = './result/label/styling_rand'
+
 
     oth_dataloader = data.create_dataloader(opt)
 
+    for i, data_i in enumerate(zip(src_dataloader,oth_dataloader)):
+        src_data = data_i[0]
+        oth_data = data_i[1]
+        generated = model(src_data,oth_data, mode=opt.styling_mode)
+        img_path = src_data['path']
+
+        for b in range(generated.shape[0]):
+            print('process image... %s' % img_path[b])
+            visuals = OrderedDict([('input_label', data_i['label'][b]),
+                                   ('synthesized_image', generated[b])])
+            visualizer.save_images(visuals, img_path[b:b+1],opt.results_dir,f'results_{i}')
+"""
     for i, data_i in enumerate(zip(cycle(src_dataloader),oth_dataloader)):
         src_data = data_i[0]
         oth_data = data_i[1]
@@ -49,8 +67,7 @@ def reconstruct(mode):
                                ('synthesized_image', generated[b])])
 
             visualizer.save_images(visuals, img_path[b:b + 1],opt.results_dir,f'results_{i}')
-    
-        
+    """
 
 
 

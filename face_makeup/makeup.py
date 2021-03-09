@@ -48,7 +48,7 @@ def hair(image, parsing, part=17, color=[230, 50, 20]):
     changed[parsing != part] = image[parsing != part]
     return changed
 
-def dyeing(respth,dspth,color=[50,200,40]):
+def hair_dyeing(respth,dspth,color=[200,30,40]):
     cp = './face_makeup/cp/79999_iter.pth'
     files = glob.glob(dspth+'/*.jpg')
     for f in files:
@@ -57,4 +57,5 @@ def dyeing(respth,dspth,color=[50,200,40]):
         parsing = evaluate(f, cp)
         parsing = cv2.resize(parsing, image.shape[0:2], interpolation=cv2.INTER_NEAREST)
         image = hair(image, parsing, part=17, color=color)
+        image = cv2.resize(image,(256,256))
         cv2.imwrite(respth+'/NoReferenceDyeing.jpg',image)
