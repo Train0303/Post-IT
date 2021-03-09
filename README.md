@@ -16,14 +16,15 @@ You can download SEAN(Image Synthesis with Semantic Region-Adaptive Normalizatio
 FaceParser
 =====================
 You can download FaceParser pretraiend model(CelebAMask-HQ dataset)<br/>
-[Google Drive](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)
+[Google Drive](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)<br/>
+![123](https://user-images.githubusercontent.com/39511892/110231927-f2f8a680-7f5d-11eb-9569-63f10331f409.png)<br/>
 
 FaceMakeUp
 ==================
 dyeing no reference. only using RGB values
 
-![1](https://user-images.githubusercontent.com/39511892/109808245-36a39580-7c6a-11eb-9406-a6bf24e7f40d.png)
-<br/>
+![test](https://user-images.githubusercontent.com/39511892/110232065-db6ded80-7f5e-11eb-826b-52d316d33ccd.PNG)<br/>
+
 ![2](https://user-images.githubusercontent.com/39511892/109808291-4327ee00-7c6a-11eb-8e01-b8eef53b27bc.png)
 
 reference
