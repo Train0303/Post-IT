@@ -38,7 +38,7 @@ def vis_parsing_maps(im, parsing_anno, stride, save_im=False, save_path='vis_res
     vis_im = cv2.resize(vis_im,(256,256))
     if save_im:
         print(save_path)
-        cv2.imwrite(save_path +'.png', vis_im)
+        cv2.imwrite(save_path +'.jpg', vis_im)
         #cv2.imwrite(save_path, vis_im, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
     return vis_parsing_anno
@@ -70,11 +70,12 @@ def parsing(respth, dspth):
             out = net(img)[0]
             parsing = out.squeeze(0).cpu().numpy().argmax(0) 
             # rematch label for SEAN implement
-            vis_parsing_maps(image, parsing, stride=1, save_im=True, save_path=osp.join(respth, image_path[:-4]))
+            #vis_parsing_maps(image, parsing, stride=1, save_im=True, save_path=osp.join(respth, image_path[:-4]))
             
 
             """
             0~18  0은 아마 other 논외일 거라고 추측
+            """
             parsing[parsing == 0] = 0 
             parsing[parsing == 1] = 1
             parsing[parsing == 2] = 6
@@ -95,5 +96,5 @@ def parsing(respth, dspth):
             parsing[parsing == 17] = 13
             parsing[parsing == 18] = 14
                
-            vis_parsing_maps(image, parsing, stride=1, save_im=True, save_path=osp.join(respth, image_path[:-4]))"""
+            vis_parsing_maps(image, parsing, stride=1, save_im=True, save_path=osp.join(respth, image_path[:-4]))
             #vis_parsing_maps(image, parsing, stride=1, save_im=True, save_path=osp.join(respth,root[-3:],files[0][:-4]))

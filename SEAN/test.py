@@ -13,6 +13,28 @@ def reconstruct(mode):
     opt.contain_dontcare_label = True
     opt.no_instance = True
 
+    if mode == 'dyeing':
+        opt.image_dir = './dataset/src'
+        opt.label_dir = './result/label/dyeing/src'
+
+    elif mode == 'refdyeing':
+        opt.styling_mode = 'dyeing' 
+
+        opt.image_dir = './dataset/src'  #이미지 있는곳
+        opt.label_dir = './result/label/refdyeing/src' #라벨 있는곳?
+
+    elif mode == 'styling_ref': # styling_ref
+        opt.styling_mode = 'styling'
+
+        opt.image_dir = './dataset/src'
+        opt.label_dir = './result/label/styling_ref/src'
+    
+    else:                       #styling_rand
+        opt.styling_mode = 'styling'
+
+        opt.image_dir = './dataset/src'
+        opt.label_dir = './result/label/styling_rand/src'
+    
     model = Pix2PixModel(opt)
     model.eval()
 
@@ -21,8 +43,14 @@ def reconstruct(mode):
     # make dataloader for source image
     src_dataloader = data.create_dataloader(opt)
 
-    if mode == 'refdyeing':
-        opt.styling_mode = mode 
+    if mode == 'dyeing':
+        opt.styling_mode = mode
+
+        opt.image_dir = './dataset/dyeing'
+        opt.label_dir = './result/label/dyeing/ref'
+
+    elif mode == 'refdyeing':
+        opt.styling_mode = 'dyeing' 
 
         opt.image_dir = './dataset/dyeing'  #이미지 있는곳
         opt.label_dir = './result/label/refdyeing' #라벨 있는곳?
