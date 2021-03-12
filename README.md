@@ -11,7 +11,12 @@ SEAN
 =============================
 You can download SEAN(Image Synthesis with Semantic Region-Adaptive Normalization) pretrained model(CelebA-HQ_pretrained)<br/>
 [Google Drive](https://drive.google.com/file/d/1UMgKGdVqlulfgOBV4Z0ajEwPdgt3_EDK/view?usp=sharing)
+Dyeing
+--------------------------------------
+RGBdyeing
 
+refdyeing
+![image](https://user-images.githubusercontent.com/39511892/110923743-908c1580-8364-11eb-8737-db7ef1987ae3.png)
 
 FaceParser
 =====================
