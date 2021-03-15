@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import shutil
 
-model = load_model('gender_classifier.h5',compile=False)
+model = load_model('./gender_classifier.h5',compile=False)
 
 X=list()
 data_dir = "./test_data"
@@ -33,7 +33,5 @@ input_data = input_data.astype('float32') / 255
 result = model.predict(input_data)
 
 for idx,cat in enumerate(result) :
-    if result[idx][0] >= result[idx][1]:
-        shutil.move(files[idx],result_dir+"/"+result_categories[0]+'/'+str(idx)+".jpg")
-    else:
-        shutil.move(files[idx],result_dir+"/"+result_categories[1]+'/'+str(idx)+".jpg")
+    max_index = np.argmax(result[idx])
+    shutil.move(files[idx],result_dir+"/"+result_categories[max_index]+'/'+str(idx)+".jpg")

@@ -73,14 +73,15 @@ def reconstruct(mode):
     for i, data_i in enumerate(zip(src_dataloader,oth_dataloader)):
         src_data = data_i[0]
         oth_data = data_i[1]
-        generated = model(src_data,oth_data, mode=opt.styling_mode)
-        img_path = src_data['path']
 
-        for b in range(generated.shape[0]):
-            print('process image... %s' % img_path[b])
-            visuals = OrderedDict([('input_label', data_i['label'][b]),
-                                   ('synthesized_image', generated[b])])
-            visualizer.save_images(visuals, img_path[b:b+1],opt.results_dir,f'results_{i}')
+        # generated = model(src_data,oth_data, mode=opt.styling_mode)
+        # img_path = src_data['path']
+
+        # for b in range(generated.shape[0]):
+        #     print('process image... %s' % img_path[b])
+        #     visuals = OrderedDict([('input_label', data_i['label'][b]),
+        #                            ('synthesized_image', generated[b])])
+        #     visualizer.save_images(visuals, img_path[b:b+1],opt.results_dir,f'results_{i}')
 """
     for i, data_i in enumerate(zip(cycle(src_dataloader),oth_dataloader)):
         src_data = data_i[0]

@@ -15,12 +15,12 @@ def main(args):
             hair_dyeing(respth='./dataset/dyeing',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/src',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/ref',dspth='./dataset/dyeing')
-            reconstruct(args.mode)    
+            #reconstruct(args.mode)    
         else:
             hair_dyeing(respth='./result/dyeing',dspth='./dataset/src',color=args.color) #test
             parsing(respth='./result/label/dyeing/src',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/ref',dspth='./dataset/dyeing')
-            reconstruct(args.mode)
+            #reconstruct(args.mode)
 
     elif args.mode == 'refdyeing':
         # Parsing > SEAN
