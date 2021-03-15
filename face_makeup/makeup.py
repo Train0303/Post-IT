@@ -25,7 +25,7 @@ def sharpen(img):
     return np.array(img_out, dtype=np.uint8)
 
 
-def hair(image, parsing, part=17, color=[230, 50, 20]):
+def hair(image, parsing, part=17, color=[230, 100, 50]):
     b, g, r = color      #[10, 50, 250]       # [10, 250, 10]
     tar_color = np.zeros_like(image)
     tar_color[:, :, 0] = b
@@ -48,7 +48,7 @@ def hair(image, parsing, part=17, color=[230, 50, 20]):
     changed[parsing != part] = image[parsing != part]
     return changed
 
-def hair_dyeing(respth,dspth,color=[200,30,40]):
+def hair_dyeing(respth,dspth,color=[230, 100, 50]):
     cp = './face_makeup/cp/79999_iter.pth'
     files = glob.glob(dspth+'/*.jpg')
     for f in files:
@@ -57,5 +57,4 @@ def hair_dyeing(respth,dspth,color=[200,30,40]):
         parsing = evaluate(f, cp)
         parsing = cv2.resize(parsing, image.shape[0:2], interpolation=cv2.INTER_NEAREST)
         image = hair(image, parsing, part=17, color=color)
-        image = cv2.resize(image,(256,256))
         cv2.imwrite(respth+'/NoReferenceDyeing.jpg',image)

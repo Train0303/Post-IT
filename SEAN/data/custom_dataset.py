@@ -24,9 +24,9 @@ class CustomDataset(Pix2pixDataset):
         parser.set_defaults(label_nc=18)
         parser.set_defaults(contain_dontcare_label=False)
 
-        parser.add_argument('--label_dir', type=str, default='./results/label/src',
+        parser.add_argument('--label_dir', type=str, default='./result/label/src',
                             help='path to the directory that contains label images')
-        parser.add_argument('--image_dir', type=str, default='./data/src/src',
+        parser.add_argument('--image_dir', type=str, default='./data/src/',
                             help='path to the directory that contains photo images')
         parser.add_argument('--instance_dir', type=str, default='',
                             help='path to the directory that contains instance maps. Leave black if not exists')

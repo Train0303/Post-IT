@@ -7,20 +7,21 @@ from face_parser.test import parsing
 from SEAN.test import reconstruct
 
 def main(args):
+    args.label_nc = 19
     print(args)
     torch.manual_seed(args.seed)
-
+    
     if args.mode == 'dyeing':
         if(args.color == None):
             hair_dyeing(respth='./dataset/dyeing',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/src',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/ref',dspth='./dataset/dyeing')
-            #reconstruct(args.mode)    
+            reconstruct(args.mode)    
         else:
             hair_dyeing(respth='./result/dyeing',dspth='./dataset/src',color=args.color) #test
             parsing(respth='./result/label/dyeing/src',dspth='./dataset/src')
             parsing(respth='./result/label/dyeing/ref',dspth='./dataset/dyeing')
-            #reconstruct(args.mode)
+            reconstruct(args.mode)
 
     elif args.mode == 'refdyeing':
         # Parsing > SEAN
@@ -28,7 +29,7 @@ def main(args):
         parsing(respth='./result/label/refdyeing/src' ,dspth='./dataset/src') # parsing src_image
         parsing(respth='./result/label/refdyeing/ref', dspth='./dataset/ref') # parsing ref_image
         #SEAN
-        #reconstruct(args.mode)
+        reconstruct(args.mode)
 
     #------------------------------------stargan v2 여기부터--------------------------------------------------
     # elif args.mode == 'styling_ref':
