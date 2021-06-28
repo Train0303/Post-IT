@@ -15,13 +15,15 @@ def SEAN_making(mode,ID):
     opt.contain_dontcare_label = True
     opt.no_instance = True
     opt.mode = mode
+    
     model = Pix2PixModel(opt)
     model.eval()
     visualizer = Visualizer(opt)
-
+    
     opt.image_dir, opt.label_dir = src_mode_path(opt,mode,ID)
     src_dpath= opt.image_dir
     src_label = parsing(opt.label_dir,src_dpath)
+    
     src_dataloader = data.create_dataloader(opt)
     
     

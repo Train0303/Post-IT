@@ -39,7 +39,7 @@ def vis_parsing_maps(im, parsing_anno, stride, save_im=False, save_path='vis_res
     if save_im:
         #print(save_path)
         cv2.imwrite(save_path +'.jpg', vis_parsing_anno)
-        #cv2.imwrite(save_path, vis_im, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+        #cv2.imwrite(save_path+'.jpg', vis_im, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
     vis_parsing_anno = vis_parsing_anno.astype(np.float32)
     vis_parsing_anno = torch.tensor(vis_parsing_anno)
     vis_parsing_anno = vis_parsing_anno.view(1,1,512,512)
