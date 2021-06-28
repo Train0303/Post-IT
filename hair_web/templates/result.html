@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+  <div id="main-box" class="container">
+    <h1> <span class = "blue-text">HAIRSTYLE</span> RESULT</h1>
+    <div id = "spinner-section">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" role="status"><br>
+        </div>
+      </div>
+      <div id = "spinner-text">이미지를 변환 중 입니다. </div>
+    </div>
+    <div id = "img-section">
+      <img id="changeImg" alt="" srcset="">
+      <br>
+      <a id = "main-button" class="btn btn-outline-primary" href="{{ url_for('main_html') }}" role="button">메인으로 돌아가기</a>
+    </div>
+  </div>
+</body>
+
+<script>
+  var intervalId;
+  window.addEventListener("load", function(event) {
+      intervalId = setInterval(checkImage,2000);
+  });
+
+  function checkImage(){
+      var img = new Image();
+      img.src = {{ data|tojson}};
+      img.onload = function(){
+          document.getElementById("changeImg").setAttribute("src",{{ data|tojson}});
+          document.getElementById("changeImg").setAttribute("style","padding-top: 5%; padding-bottom : 2%");
+          document.getElementById("spinner-section").setAttribute("style","display:none");
+          clearInterval(intervalId);
+      }
+}
+</script>
+
+</html>

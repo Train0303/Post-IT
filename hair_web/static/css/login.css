@@ -1,0 +1,31 @@
+#login-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 80px;
+    display: inline-block;
+    margin-top: 15%;
+}
+
+h1{
+    text-align: center;
+    color: #5C636A;
+}
+
+body{
+    
+    text-align: center;
+    background-color: #E9EDFB;
+}
+
+#login-form{
+    margin-top: 30px;
+}
+
+#signup{
+    color: #5C636A;
+    margin-right: 20px;
+}
+
+#signUp-form{
+    margin-top: 30px;
+}

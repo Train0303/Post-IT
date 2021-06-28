@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+
+<body>
+  <div id="main-box">
+    <h1> <span class="blue-text">HAIRSTYLE</span> CHANGE</h1>
+    <form method = "POST" enctype = "multipart/form-data">
+      <p class="title-text">원하는 변환 방법을 선택해 주세요</p>
+      <select name = "type-select" id="type-select" class="form-select form-select-sm">
+        <option value="1">원하는 헤어스타일 고르기</option>
+        <option value="2">염색하기</option>
+      </select>
+      <div class="row">
+        <!--오리지널 이미지-->
+        <div id="source-img" class="col-lg">
+          <p class="title-text">변환하기 원하는 이미지를 업로드해 주세요.</p>
+          <div id="img-box">
+            <img id="source-jpg-img" src="{{ url_for('static', filename='images/jpg.png') }}" alt="" srcset="">
+          </div>
+          <input type="file" name="sourceFile" id="sourceFile" onchange="setSourceThumbnail(event);"><br>
+        </div>
+        <!--Reference Image-->
+        <div id="reference-img" class="col-lg">
+          <p id="reference-text" class="title-text">바꾸고 싶은 헤어스타일을 업로드해 주세요.</p>
+          <div id="img-box">
+            <img id="reference-jpg-img" src="{{ url_for('static', filename='images/jpg.png') }}" alt="" srcset="">
+          </div>
+          <input type="file" name="referenceFile" id="referenceFile" onchange="setReferenceThumbnail(event);"><br>
+        </div>
+      </div>
+
+      <!--RGB Value Select-->
+
+      <div class="row">
+        <div id="color-input" class="col-sm">
+          <p class="title-text"> <input type="checkbox" name="color-check" id="color-check"> 원하는 헤어 색상을 직접 선택해 주세요.</p>
+          <input id = "rgb-color" name = "rgb-color" type="color"><br>
+        </div>
+        <!-- Hair Style Select DropDown-->
+        <div id="select-style" class="col-sm">
+          <p class="title-text">원하는 헤어 스타일을 선택해 주세요.</p>
+          <select name ="hair-select" id="hair-select" class="form-select form-select-sm">
+            <option value="0">해당없음</option>
+            <option value="1">앞머리</option>
+            <option value="2">앞머리 없이</option>
+            <option value="3">생머리</option>
+            <option value="4">웨이브 머리</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="submit">
+        <input id="submit-button" class="btn btn-outline-primary btn-md" type="submit" value="머리 변환하기">
+      </div>
+
+    </form>
+  </div>
+
+
+  </div>
+</body>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</html>
