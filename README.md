@@ -27,7 +27,7 @@ dyeing no reference. only using RGB values
 
 ![2](https://user-images.githubusercontent.com/39511892/109808291-4327ee00-7c6a-11eb-8e01-b8eef53b27bc.png)
 
-reference
+Reference
 ====================
 StarGan-v2: [Clova AI](https://github.com/clovaai/stargan-v2)<br/>
 SEAN: [SEAN](https://github.com/ZPdesu/SEAN)<br/>
